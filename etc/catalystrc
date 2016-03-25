@@ -1,7 +1,0 @@
-#!/bin/bash
-# This is an example catalystrc. As such, it doesn't actually *do* anything.
-
-# Uncomment the following to increase the number of threads used to compile.
-export MAKEOPTS="-j5"
-export GENTOO_MIRRORS=""
-
