@@ -1,0 +1,10 @@
+
+/dev/*
+/proc/*
+/sys/*
+
+/run/*
+/tmp/*
+
+/usr/portage/distfiles/*
+/usr/portage/packages/*

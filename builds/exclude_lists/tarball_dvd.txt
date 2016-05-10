@@ -1,0 +1,21 @@
+# DVD exclude list
+
+# Virtual filesystems
+/dev/*
+/proc/*
+/sys/*
+
+# Dynamic directories
+/run/*
+/tmp/*
+
+# Portage
+# /usr/portage/*
+
+## Portage distfiles and packages
+/usr/portage/distfiles/*
+/usr/portage/packages/*
+
+## Portage cache
+#/var/cache/edb/ # misc internal cache files
+#/var/db/pkg/ # database to track installed packages
