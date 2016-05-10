@@ -13,7 +13,8 @@ DEBUG=0
 VERBOSE=0
 QUITE=0
 
-# mkvitality [--options] <arguement>
+SCRIPT_NAME="${0##*/}"
+
 import() {
 	local module="${1}"
 
@@ -27,32 +28,31 @@ import() {
 }
 
 usage() {
-	msg=$1
+	MSG="${1}"
 
-	if [ -n "${msg}" ]; then
-		printf "${msg}\n"
-    else
+	if [ -n "${MSG}" ]; then
+		printf "${MSG}\n\n"
+    fi
     cat <<EOF
-Usage:
-  mkvitality  [--option] <arguement>
+usage:
+  ${SCRIPT_NAME} [--option] <arguement>
 
-Options:
+options:
   -h|--help            Show this message and exit.
   -d|--debug           Output debugging messages.
   -q|--quiet           Only output fatal error messages.
   -v|--verbose         Be verbose (show command output).
   -V|--version         Print version and exit.
 
-Arguments:
+argument:
   <arch>       The architecture to built. Choose from
 		amd64, arm, and x86
 EOF
-	fi
 }
 
 # These modules must be included
 import output
-import version
+import control
 
 # Parse arguments
 while [ ${#} -gt 0 ]; do
@@ -72,9 +72,6 @@ shift
 			fi
 			QUITE=1
 		;;
-		-s|--sanity-check)
-			sanitycheck=1
-		;;
 		-v|--verbose)
 			if [[ "${QUITE}" != "0" ]]; then
 				usage "The --quiet and --verbose options are mutually exclusive. Choose only one." && exit 1
@@ -82,18 +79,23 @@ shift
 			VERBOSE=1
 		;;
 		-V|--version)
-			printf "Vitality version ${VERSION}\nCopyright (C) 2016 Matthew Marchese\nLicense: MIT\n\n"
-			printf "To file a bug or to request a feature please visit:\nhttps://github.com/digitalsurvival/vitality\n\n"
-			printf "This is free software; you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n"
+			printf "${SCRIPT_NAME} v${VERSION_NUMBER}\nCopyright (C) 2016\nMatthew Marchese\nLicense: MIT\n\n"
+			printf "To file a bug or to request a feature please visit:\nhttps://github.com/digitalsurvival/vitality\n"
 			exit 0
+		;;
+		amd64|x86|arm)
+			debug "${INPUT} has been selected"
+			V_ARCH="${INPUT}"
 		;;
 		-*)
 			usage "Invalid option specified: ${INPUT}" && exit 1
 		;;
 		*)
-			V_ARCH="${INPUT}"
+			usage "Invalid option specified: ${INPUT}" && exit 1
 		;;
 	esac
 done
 
-echo "${V_ARCH}"
+notify "${V_ARCH}"
+
+

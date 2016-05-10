@@ -1,9 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Script updates stage files in various folders below stages with
 # version values. Can update snapshots independantly.
-
-source ../version
 
 # Output a file containing tarball files
 tar --list --file ${BASE_DIR}/chroot/*tar.xz >> ${RELEASE_DIR}/${BRANDING_SHORT}-v${VERSION_NUMBER}-filelist.txt

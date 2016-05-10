@@ -1,0 +1,56 @@
+# Editors
+app-editors/vim -X -gpm -minimal -perl -python bash-completion
+app-editors/vim-core -livecd bash-completion
+
+# Web browsers
+www-client/midori deprecated -webkit2 -sqlite -unique -doc -gnome -html -idn -libnotify
+#www-client/firefox
+#www-client/chromium
+
+# Communication
+net-irc/hexchat
+net-irc/weechat
+
+# Portage tools
+app-portage/gentoolkit
+app-portage/portage-utils
+
+# Filesystem user space tools
+sys-fs/squashfs-tools xz -lzma gzip lz4 lzo
+sys-fs/xfsprogs -readline
+sys-fs/progsreiserfs static-libs
+sys-fs/ntfs3g -external-fuse -acl ntfsprogs extras
+sys-fs/btrfs-progs -debug-utils
+ys-fs/ecryptfs-utils openssl -pkcs11 -gtk
+
+# Data compression
+app-arch/tar
+app-arch/xz-utils
+app-arch/zip
+app-arch/cpio
+app-arch/bzip2
+app-arch/p7zip rar
+
+# Block utilities
+sys-block/parted readline -device-mapper
+sys-block/gparted btrfs fat hfs jfs ntfs reiser4 reiserfs xfs xfce f2fs -kde
+sys-apps/gptfdisk
+sys-block/partimage ssl -nologin -nls pam -static
+sys-block/partclone -reiserfs -xfs -reiser4 hfs fat ntfs btrfs
+
+
+# System utilities
+net-misc/openssh
+net-misc/zsync
+net-misc/rsync
+app-crypt/pinentry gnome-keyring
+app-cdr/cdw -gtk
+
+# Data recovery
+app-admin/testdisk
+
+# Resource monitors
+sys-process/htop
+sys-process/iotop
+sys-process/atop
+sys-apps/smartmontools minimal
