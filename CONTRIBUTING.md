@@ -2,6 +2,14 @@
 
 Want to get involved? Hop into the #digital-survival channel on Freenode IRC and tell me about it. I am happy for any help. :)
 
+## Dependancies
+
+app-portage/eix (eix)
+app-arch/tar (tar)
+sys-fs/squashfs-tools (mksquashfs)
+app-shells/bash (bash)
+sys-apps/coreutils (md5sum, sha1sum, sha512sum)
+
 ## Bash
 
 * Multi-word functions and variables should use underscores, not dashes (-).
