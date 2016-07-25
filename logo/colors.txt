@@ -1,0 +1,5 @@
+hex base: 2abce0
+
+triad: 2abce0  e02abc  bce02a
+
+The goal is to create a Easter color theme for the logo; these may be a little bright but they work.
