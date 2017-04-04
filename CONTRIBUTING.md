@@ -27,4 +27,4 @@ All bash code should be checked for errors at http://www.shellcheck.net/ before 
 
 ## Image versioning
 
-Code used by this project follows [symantic versioning](http://semver.org/#semantic-versioning-200) as close as is possible for a Linux ISO.
+Code used by this project follows [symantic versioning](http://semver.org/#semantic-versioning-200) as close as is possible for a Linux distribution.
